@@ -1,0 +1,33 @@
+﻿body {
+    background-color: #ded1c1;
+    padding-top: 180px;
+}
+
+header {
+	background-color:#975e4a;
+    color: white;
+    font-size: 50px;
+    height: 150px;
+    vertical-align: middle;
+}
+
+.thumb {
+	margin-bottom: 30px;
+}
+
+.thumbnail {
+    background-color: #ded1c1;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+.growl-item.ng-enter,
+.growl-item.ng-leave {
+    -webkit-transition:1s linear all;
+    -moz-transition:1s linear all;
+    -o-transition:1s linear all;
+    transition:1s linear all;
+}

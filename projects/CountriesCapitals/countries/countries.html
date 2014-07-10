@@ -1,0 +1,31 @@
+﻿<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">Countries</div>
+        <div class="table-responsive">
+            <div class="scrollTable">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Country Code</th>
+                            <th class="text-center">Capital</th>
+                            <th class="text-center">Area (km2)</th>
+                            <th class="text-center">Population</th>
+                            <th class="text-center">Continent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="country in countries | orderBy:'countryName'">
+                            <td><a ng-href="#!/countries/{{ country.countryCode | uppercase }}">{{ country.countryName }}</a></td>
+                            <td>{{ country.countryCode }}</td>
+                            <td>{{ country.capital }}</td>
+                            <td>{{ country.areaInSqKm | number:0 }}</td>
+                            <td>{{ country.population | number:0 }}</td>
+                            <td>{{ country.continentName }}</td>
+                        </tr>
+                    </tbody>
+                </table>                
+            </div>
+        </div>
+    </div>
+</div>

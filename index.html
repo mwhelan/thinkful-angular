@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Thinkful FEWD Portfolio</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body data-spy="scroll">
+
+    <!-- ******HEADER****** -->
+    <header id="top" class="header navbar-fixed-top">
+        <div class="container">
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                    <img id="logo-image" class="logo-image" src="assets/images/thinkful_logo.jpg" alt="Logo">
+                    <span class="logo-title">Front-End Web Development</span>
+                </a>
+            </h1><!--//logo-->
+            <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#promo">Home</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#faq">Portfolio</a></li>
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div>
+    </header><!--//header-->
+
+    <!-- ******PROMO****** -->
+    <section id="promo" class="promo section offset-header has-pattern">
+        <div class="container">
+            <div class="row">
+                <div class="overview col-md-8 col-sm-12 col-xs-12">
+                    <h2 class="title">In May 2014 I completed the Thinkful FEWD course</h2>
+                    <ul class="summary">
+                        <li>Learn web development and apply UX design principles to create user-friendly products</li>
+                        <li>8 interactive websites with HTML, CSS, JavaScript, jQuery and Git.</li>
+                        <li>Several additional JavaScript and jQuery game projects</li>
+                        <li>All of the source code is available on GitHub <a href="https://github.com/mwhelan/thinkful-fewd">here</a>.</li>
+                    </ul>
+                </div>  <!--//overview-->
+            </div>  <!--//row-->
+        </div>  <!--//container-->
+    </section>  <!--//promo-->
+
+    <!-- ******PORTFOLIO****** -->
+    <section id="faq" class="faq section">
+        <div class="container">
+            <div class="row">
+                <h2 class="title text-center">Portfolio</h2>
+                <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="item">
+                        <h3 class="question">1. HTML Resume</h3>
+                        <p class="answer">The first project required creating a standard resume. The focus was on the HTML structure rather than the presentation.</p>
+                        <a href="projects/HtmlResume/"><img src="assets/images/projects/html-resume.png" alt="html resume"/></a>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="question">3. Small Business Landing Page</h3>
+                        <p class="answer">A static landing page for a small business. The focus was on designing and coding for a user experience that we have defined. I created a page for the TestStack open source organisation.</p>
+                        <a href="projects/SmallBusinessLandingPage/"><img src="assets/images/projects/landing-page.png" alt="small business landing page" /></a>
+
+                    </div><!--//item-->
+                    <div class="item">
+                        <h3 class="question">5. Hot or Cold</h3>
+                        <p class="answer">A game where the user has to keep guessing a number between 1 and 100 and is told if they are 'hot' or 'cold' until they guess correctly. Focuses on JavaScript functions.</p>
+                        <a href="projects/HotOrCold/"><img src="assets/images/projects/hot-or-cold.png" alt="hot or cold" /></a>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="question">7. API Hack</h3>
+                        <p class="answer">An app that utilises JSON APIs. I built a Currency Converter that pulled currencies and live exchange rates from
+                            <a href="https://openexchangerates.org/">open exchange rates</a>.</p>
+                        <a href="projects/ApiHack/"><img src="assets/images/projects/api-hack-currency-converter.png" alt="api hack - currency converter" /></a>
+                    </div><!--//item-->
+                </div><!--//faq-col-->
+
+                <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+                    <div class="item">
+                        <h3 class="question">2. Google Clone</h3>
+                        <p class="answer">A clone of the google search page. The focus is on using CSS to reproduce a given design.</p>
+                        <a href="projects/GoogleClone/"><img src="assets/images/projects/google-clone.png" alt="google clone" /></a>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="question">4. Shopping List</h3>
+                        <p class="answer">An app to add and remove items from a shopping list, focusing on interactivity with jQuery. Users should be able to check and uncheck items and I also added the ability reorder items with drag and drop.</p>
+                        <a href="projects/ShoppingList/"><img src="assets/images/projects/shopping-list.png" alt="shopping list" /></a>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="question">6. Quiz</h3>
+                        <p class="answer">A quiz game that leads the user through a series of questions, focusing on JavaScript data with JSON and arrays. I did three quizzes – music, movies, and TV – where each quiz is just a different JSON object.</p>
+                        <a href="projects/Quiz/"><img src="assets/images/projects/quiz-app.png" alt="quiz app" /></a>
+                    </div><!--//item-->
+
+                    <div class="item">
+                        <h3 class="question">8. Portfolio</h3>
+                        <p class="answer">A capstone project to display all of the Thinkful Front-End Web Development course projects (this website).</p>
+                        <img src="assets/images/projects/portfolio.png" alt="Thinkful portfolio"/>
+                    </div><!--//item-->
+                </div><!--//faq-col-->
+            </div><!--//row-->
+        </div>  <!--//container-->
+    </section>  <!--//portfolio-->
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container">
+            <ul class="links list-inline">
+                <li>Created as part of the <a href="https://www.thinkful.com/">Thinkful</a> Front-End Web Development course.</li>
+            </ul>
+        </div>
+    </footer><!--//footer-->
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,75 @@
+.container {
+    margin-top: 65px;
+    border: solid 7px;
+}
+
+header {
+    padding: 30px;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.panel {
+    padding: 40px;
+    border-top: solid 7px;
+}
+
+input {
+    padding: 7px;
+    /*border: solid 3px;*/
+    font-size: 18px;
+    font-style: italic;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+button {
+    margin-top: 40px;
+}
+
+.gender {
+    background-color: white;
+    margin: 40px;
+}
+
+.libInput {
+    margin-top: 12px;
+}
+
+.highlight {
+    font-size: 1.3em;
+    display: inline;
+    padding: .2em .6em .3em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: #428bca;
+    color: white;
+}
+
+.panel-body p {
+    line-height: 40px;
+}
+
+.animation.ng-hide-add {
+  -webkit-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+  opacity:0;
+}
+.animation.ng-hide-remove {
+  -webkit-transition:1.5s linear all;
+  transition:1.5s linear all;
+  display:block!important;
+  opacity:1;
+}
+.animation.ng-hide {
+  opacity:0;
+}

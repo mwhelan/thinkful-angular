@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Instagram Searcher</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+    <link rel="stylesheet" href="Content/angular-growl.css" />
+    <link rel="stylesheet" href="Content/styles.css">
+</head>
+    <body ng-controller="SearchController">
+        <div class="container">
+            <!-- header -->
+            <header class="navbar navbar-fixed-top text-center">
+                <img src="images/instagram-searcher3.png" alt="instagram searcher logo" />
+                <!--<div class="col-lg-2 col-lg-offset-5">
+                        insta<img src="images/AngularJS-logo-100x100.png" alt="instagram searcher logo" />gram searcher                    
+                    </div>-->
+            </header>
+
+            <!-- search form -->
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4">
+                    <form class="form-horizontal" role="form" name="searchForm" novalidate ng-submit="search()">
+                        <div class="form-group" ng-class="{'has-error': searchForm.searchField.$invalid && (!searchForm.searchField.$pristine || submitted)}">
+                            <div class="col-xs-10">
+                                <input name="searchField" type="text" class="form-control"
+                                       ng-model="searchField" required ng-pattern="/^[a-zA-Z0-9-_]+$/"
+                                       placeholder="Enter a tag to search for">
+                                <p ng-show="searchForm.searchField.$invalid && (!searchForm.searchField.$pristine || submitted)" class="error-message">A single word with letters and numbers only.</p>
+                            </div>
+                            <div class="col-xs-2">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- search feedback -->
+            <div id="messageBox" class="row text-center" growl>
+                <!--<label id="messageBox" ng-show="displayMessage">{{ message }}</label>-->
+            </div>
+
+            <!-- image results -->
+            <div class="row">
+                <div class="col-md-4 col-xs-6 thumb" ng-repeat="item in images">
+                    <a class="thumbnail" ng-href="{{item.link}}">
+                        <img class="img-responsive" ng-src="{{ item.images.low_resolution.url }}" alt="{{ item.caption.text }}">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="Scripts/jquery-2.1.1.js"></script>
+        <script src="Scripts/angular.js"></script>
+        <script src="Scripts/angular-animate.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+        <script src="Scripts/angular-growl.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/search/SearchController.js"></script>
+    </body>
+</html>

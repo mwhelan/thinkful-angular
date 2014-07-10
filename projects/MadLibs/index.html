@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MadLibs</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.css" />
+    <link href="plugins/bootstrap-validator/css/bootstrapValidator.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body ng-controller="GameController">
+    <div class="container">
+        <!-- header -->
+        <div class="row">
+            <header>
+                <div class="col-sm-4 text-center">
+                    <img src="assets/images/mad-lib-happy-face.png" alt="MadLibs happy face" />
+                </div>
+
+                <div class="col-sm-8 text-center">
+                    <img src="assets/images/ng-mad-libs-logo.png" alt="MadLibs logo" />
+                    <h1>Automate This!</h1>
+                </div>
+            </header>
+        </div>
+
+        <!-- game -->
+        <div class="row">
+
+            <form name="myForm" ng-submit="submit()" novalidate>
+                <!-- form view -->
+                <div class="panel animation" ng-show="view == 'form'">
+                    <div class="panel-body">
+                        <h2>Provide the following words:</h2>
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="input-group gender pull-left">
+                                    <span class="input-group-addon">
+                                        <input type="radio" ng-model="gender.isFemale" ng-value="false">  Male
+                                    </span>
+                                    <span class="input-group-addon">
+                                        <input type="radio" ng-model="gender.isFemale" ng-value="true"> Female
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="btn btn-info" type="button" name="sampleData" ng-click="sampleData()">Sample data</button>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <!--ng-class="{'has-error': myForm.personName.$error.required}">-->
+                                <div class="form-group libInput" ng-class="{'has-error': hasError('personName')}">
+                                    <input name="personName" class="form-control" type="text" required ng-model="data.personName" placeholder="person name" />
+                                    <p class="error-message" ng-if="hasError('personName')">You did not enter a valid name</p>
+                                </div>
+
+                                <div class="form-group libInput" ng-class="{'has-error': hasError('jobTitle')}">
+                                    <input name="jobTitle" class="form-control" type="text" required ng-model="data.jobTitle" placeholder="job title" />
+                                    <p class="error-message" ng-if="hasError('jobTitle')">You did not enter a valid job title</p>
+                                </div>
+                                <div class="form-group libInput" ng-class="{'has-error': hasError('tediousTask')}">
+                                    <input name="tediousTask" class="form-control" type="text" required ng-model="data.tediousTask" placeholder="tedious task" />
+                                    <p class="error-message" ng-if="hasError('tediousTask')">You did not enter a valid tedious task</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group libInput" ng-class="{'has-error': hasError('dirtyTask')}">
+                                    <input name="dirtyTask" class="form-control" type="text" required ng-model="data.dirtyTask" placeholder="dirty task" />
+                                    <p class="error-message" ng-if="hasError('dirtyTask')">You did not enter a valid dirty task</p>
+                                </div>
+                                <div class="form-group libInput" ng-class="{'has-error': hasError('celebrity')}">
+                                    <input name="celebrity" class="form-control" type="text" required ng-model="data.celebrity" placeholder="celebrity" />
+                                    <p class="error-message" ng-if="hasError('celebrity')">You did not enter a valid celebrity</p>
+                                </div>
+                                <div class="form-group libInput" ng-class="{'has-error': hasError('uselessSkill')}">
+                                    <input name="uselessSkill" class="form-control" type="text" required ng-model="data.uselessSkill" placeholder="useless skill" />
+                                    <p class="error-message" ng-if="hasError('uselessSkill')">You did not enter a valid useless skill</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group libInput" ng-class="{'has-error': hasError('obnoxiousCelebrity')}">
+                                    <input name="obnoxiousCelebrity" class="form-control" type="text" required ng-model="data.obnoxiousCelebrity" placeholder="obnoxious celebrity" />
+                                    <p class="error-message" ng-if="hasError('obnoxiousCelebrity')">You did not enter a valid obnoxious celebrity</p>
+                                </div>
+                                <div class="form-group libInput" ng-class="{'has-error': hasError('hugeNumber', 'min')}">
+                                    <input name="hugeNumber" class="form-control" type="number" required min="1" ng-model="data.hugeNumber" placeholder="huge number" />
+                                    <p class="error-message" ng-if="hasError('hugeNumber', 'min')">You must enter a number greater than zero</p>
+                                    <p class="error-message" ng-if="hasError('hugeNumber')">You did not enter a valid huge number</p>
+                               </div>
+                                <div class="form-group libInput" ng-class="{'has-error': hasError('adjective')}">
+                                    <input name="adjective" class="form-control" type="text" required ng-model="data.adjective" placeholder="adjective" />
+                                    <p class="error-message" ng-if="hasError('adjective')">You did not enter a valid adjective</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" name="submitForm">Generate Mad Lib</button>
+                    
+                        <!--<ul>
+                            <li ng-repeat="(key, errors) in myForm.$error track by $index">
+                                <strong>{{ key }}</strong> errors
+                                <ul>
+                                    <li ng-repeat="e in errors">{{ e.$name }} has an error: <strong>{{ key }}</strong>.</li>
+                                </ul>
+                            </li>
+                        </ul>-->
+
+                    </div> <!-- /panel body -->
+                </div> <!-- /panel -->
+            </form>
+
+            <!-- story view -->
+            <div class="panel animation" ng-show="view == 'story'">
+                <div class="panel-body">
+                    <p>
+                        <span class="highlight">{{data.personName}}</span> was a <span class="highlight">{{data.jobTitle}}</span> who loved technology.
+                        Although {{ gender.heShe() }} loved parts of {{ gender.hisHer() }} job, {{ gender.heShe() }} absolutely
+                        hated <span class="highlight">{{data.tediousTask}}</span> and
+                        <span class="highlight">{{data.dirtyTask}}</span>. So, <span class="highlight">{{data.personName}} </span> met with {{ gender.hisHer() }} life
+                        mentor <span class="highlight">{{data.celebrity}}</span> who told {{ gender.himHer() }} to learn how to <span class="highlight">{{data.uselessSkill}}</span> with Thinkful.
+                        Thinkful didn't offer a course on <span class="highlight">{{data.uselessSkill}}</span> so {{ gender.heShe() }} studied programming instead.
+                    </p>
+
+                    <p>
+                        What a great decision! With {{ gender.hisHer() }} new skills, <span class="highlight">{{data.personName}}</span> built
+                        a(n) <span class="highlight">{{data.adjective}}</span> robot named <span class="highlight">{{data.obnoxiousCelebrity}}</span> that not only
+                        loved <span class="highlight">{{data.dirtyTask}}</span> but did it <span class="highlight">{{data.hugeNumber}}</span> times faster.
+                    </p>
+                
+                    <button class="btn btn-success" name="resetForm" ng-click="reset()">Reset</button>
+
+                </div><!-- /panel body -->
+            </div><!-- /panel -->
+        </div> <!-- /MadLibs story -->
+
+    </div> <!-- /container -->
+    <!-- JavaScript -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/GameController.js"></script>
+</body>
+</html>

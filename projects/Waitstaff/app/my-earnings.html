@@ -1,0 +1,35 @@
+﻿<!-- earnings info-->
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                My Earnings Info
+            </div>
+            <div class="panel-body">
+                <fieldset class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="tipTotal" class="col-sm-4 control-label">Tip Total</label>
+                        <div class="col-sm-8">
+                            <span class="form-control" id="tipTotal">{{data.tipTotal | currency}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mealCount" class="col-sm-4 control-label">Meal count</label>
+                        <div class="col-sm-8">
+                            <span class="form-control" id="mealCount">{{data.mealCount}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="averageTip" class="col-sm-4 control-label">Average Tip/Meal</label>
+                        <div class="col-sm-8">
+                            <span class="form-control" id="averageTip">{{data.averageTip | currency}}</span>
+                        </div>
+                    </div>
+                </fieldset>
+            </div> <!-- /panel body -->
+            <div class="panel-footer">
+                <button type="button" class="btn btn-danger" ng-disabled="mealForm.$pristine" ng-click="reset()">Reset</button>
+            </div>
+        </div> <!-- /panel primary-->
+    </div> <!-- /col-lg-6-->
+</div> <!-- /row -->

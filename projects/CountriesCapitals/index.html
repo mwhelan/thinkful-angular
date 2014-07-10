@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html ng-app="cacApp">
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Countries and Capitals</title>
+
+    <!-- build:css ./_assets/combined.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="cac-styles.css">
+    <!-- endbuild -->
+</head>
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand brand-heading" href="#!/">
+                    <i class="fa fa-play-circle"></i> Countries and Capitals
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li>
+                        <a href="#!/">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!/countries">Browse Countries</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+    <section class="intro">
+        <div class="intro-body">
+            <div ng-view></div>            
+        </div>
+    </section>
+
+    <!-- build:js ./_assets/combined.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="cac-app.js"></script>
+    <script src="cac-data-services.js"></script>
+    <script src="cac-app-views.js"></script>
+    <script src="countries/countries.js"></script>
+    <script src="countries/country.js"></script>
+    <script src="home/home.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

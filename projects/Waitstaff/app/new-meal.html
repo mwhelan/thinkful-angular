@@ -1,0 +1,71 @@
+﻿    <!-- meal details-->
+<div class="row">
+    <form class="form-horizontal" role="form" name="mealForm" novalidate ng-submit="addMeal()">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Enter the Meal Details
+                </div>
+                <div class="panel-body">
+                    <div class="form-group" ng-class="{'has-error': mealForm.baseMealPrice.$invalid && (!mealForm.baseMealPrice.$pristine || submitted)}">
+                        <label for="baseMealPrice" class="col-sm-4 control-label">Base Meal Price ($)</label>
+                        <div class="col-sm-8">
+                            <input name="baseMealPrice" type="number" class="form-control" ng-model="data.price" required min="0.01" placeholder="Enter meal price">
+                            <p ng-show="mealForm.baseMealPrice.$invalid && (!mealForm.baseMealPrice.$pristine || submitted)" class="error-message">Please enter the meal price</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': mealForm.taxRate.$invalid && (!mealForm.taxRate.$pristine || submitted)}">
+                        <label for="taxRate" class="col-sm-4 control-label">Tax Rate (%)</label>
+                        <div class="col-sm-8">
+                            <input name="taxRate" type="number" class="form-control" ng-model="data.taxRate" required min="1" max="100" placeholder="Enter tax rate">
+                            <p ng-show="mealForm.taxRate.$invalid && (!mealForm.taxRate.$pristine || submitted)" class="error-message">Please enter a number between 1 and 100</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': mealForm.tipPercentage.$invalid && (!mealForm.tipPercentage.$pristine || submitted)}">
+                        <label for="tipPercentage" class="col-sm-4 control-label">Tip Rate (%)</label>
+                        <div class="col-sm-8">
+                            <input name="tipPercentage" type="number" class="form-control" ng-model="data.tipPercentage" required min="1" max="100" placeholder="Enter tip percentage">
+                            <p ng-show="mealForm.tipPercentage.$invalid && (!mealForm.tipPercentage.$pristine || submitted)" class="error-message">Please enter a number between 1 and 100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="btn btn-success" ng-disabled="mealForm.$pristine">Submit</button>
+                    <button type="button" class="btn btn-success" ng-disabled="mealForm.$pristine" ng-click="cancel()">Cancel</button>
+                </div>
+            </div> <!-- /panel-->
+        </div> <!-- /meal details-->
+    </form>
+</div> <!-- /row-->
+<!-- customer charges -->
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Customer Charges
+            </div>
+            <div class="panel-body">
+                <fieldset class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="subTotal" class="col-sm-4 control-label">Subtotal</label>
+                        <div class="col-sm-8">
+                            <span class="form-control" id="subTotal">{{data.subtotal | currency}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tip" class="col-sm-4 control-label">Tip</label>
+                        <div class="col-sm-8">
+                            <span class="form-control" id="tip">{{data.tip | currency}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalPrice" class="col-sm-4 control-label">Total</label>
+                        <div class="col-sm-8">
+                            <span class="form-control" id="totalPrice">{{data.totalPrice | currency}}</span>
+                        </div>
+                    </div>
+                </fieldset>
+            </div> <!-- panel body -->
+        </div> <!-- panel primary -->
+    </div>
+</div> <!-- /row -->

@@ -1,0 +1,42 @@
+﻿body {
+    background-image: url(../images/pattern-1.png);
+    background-repeat: repeat;
+    background-position: left top;
+    background-color: #f5f5f5;
+}
+
+header {
+    padding: 10px;
+    background-color: rgb(79, 76, 76);
+}
+
+header a {
+    padding-left: 20px;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.panel-heading {
+    font-size: 24px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+span.form-control {
+    background-color: rgb(238,238,238);
+}
+
+.fa-ul {
+    margin-bottom: 25px;
+}
+
+/*animations*/
+div[ng-view].ng-enter {
+    -webkit-animation: fadeInRight 1s;
+    animation: fadeInRight 1s;
+}
